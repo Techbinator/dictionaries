@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should render snapshot with default values 1`] = `
+<BrowserRouter>
+  <DictionariesProvider>
+    <_default />
+    <div
+      className="content"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/dictionaries"
+      />
+    </div>
+  </DictionariesProvider>
+</BrowserRouter>
+`;

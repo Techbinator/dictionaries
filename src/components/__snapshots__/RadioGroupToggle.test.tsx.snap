@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroupToggle component should render snapshot with default values 1`] = `
+<div
+  className="radio-group-container"
+>
+  <input
+    checked={false}
+    id="radio-0"
+    name="dictionary-selection"
+    onChange={[Function]}
+    type="radio"
+  />
+  <label
+    htmlFor="radio-0"
+    onClick={[Function]}
+  >
+    Initial data
+  </label>
+  <span
+    key="619ce930-4116-11e9-9306-ef359c18301d"
+  >
+    <input
+      checked={true}
+      id="radio-619ce930-4116-11e9-9306-ef359c18301d"
+      name="dictionary-selection"
+      onChange={[Function]}
+      type="radio"
+    />
+    <label
+      htmlFor="619ce930-4116-11e9-9306-ef359c18301d"
+      onClick={[Function]}
+    >
+      dictionary2
+    </label>
+  </span>
+  <span
+    key="4aa2cce0-4116-11e9-9306-ef359c18301d"
+  >
+    <input
+      checked={false}
+      id="radio-4aa2cce0-4116-11e9-9306-ef359c18301d"
+      name="dictionary-selection"
+      onChange={[Function]}
+      type="radio"
+    />
+    <label
+      htmlFor="4aa2cce0-4116-11e9-9306-ef359c18301d"
+      onClick={[Function]}
+    >
+      test
+    </label>
+  </span>
+</div>
+`;

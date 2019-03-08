@@ -1,0 +1,482 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dataset component should render snapshot with default values 1`] = `
+<DictionariesProvider
+  activateDictionary={[MockFunction]}
+  activeDictionary="619ce930-4116-11e9-9306-ef359c18301d"
+  addDictionary={[MockFunction]}
+  addTranslation={[MockFunction]}
+  dictionaries={
+    Object {
+      "4aa2cce0-4116-11e9-9306-ef359c18301d": Object {
+        "name": "test",
+        "translationsUUID": Array [
+          "58f6b540-4116-11e9-9306-ef359c18301d",
+          "55a62ab0-4116-11e9-9306-ef359c18301d",
+        ],
+        "uuid": "4aa2cce0-4116-11e9-9306-ef359c18301d",
+      },
+      "619ce930-4116-11e9-9306-ef359c18301d": Object {
+        "name": "dictionary2",
+        "translationsUUID": Array [
+          "6e270e10-4116-11e9-9306-ef359c18301d",
+        ],
+        "uuid": "619ce930-4116-11e9-9306-ef359c18301d",
+      },
+    }
+  }
+  editTranslation={[MockFunction]}
+  removeDictionary={[MockFunction]}
+  removeTranslation={[MockFunction]}
+  translations={
+    Object {
+      "55a62ab0-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "Crimson",
+        "range": "newText",
+        "uuid": "55a62ab0-4116-11e9-9306-ef359c18301d",
+      },
+      "58f6b540-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "a",
+        "range": "b",
+        "uuid": "58f6b540-4116-11e9-9306-ef359c18301d",
+      },
+      "6e270e10-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "Turquoise",
+        "range": "newRange",
+        "uuid": "6e270e10-4116-11e9-9306-ef359c18301d",
+      },
+    }
+  }
+>
+  <Dataset>
+    <div
+      className="dataset one-edge-shadow"
+    >
+      <div
+        className="table-wrapper"
+      >
+        <table>
+          <_default
+            car="GMC"
+            city="Zhvanets"
+            color="Turquoise"
+            id={1}
+            payment="jcb"
+            price={30}
+            product="Sage Ground Wiberg"
+          >
+            <thead>
+              <tr>
+                <th
+                  key="id"
+                >
+                  id
+                </th>
+                <th
+                  key="product"
+                >
+                  product
+                </th>
+                <th
+                  key="color"
+                >
+                  color
+                </th>
+                <th
+                  key="price"
+                >
+                  price
+                </th>
+                <th
+                  key="car"
+                >
+                  car
+                </th>
+                <th
+                  key="payment"
+                >
+                  payment
+                </th>
+                <th
+                  key="city"
+                >
+                  city
+                </th>
+              </tr>
+            </thead>
+          </_default>
+          <_default
+            data={
+              Array [
+                Object {
+                  "car": "GMC",
+                  "city": "Zhvanets",
+                  "color": "Turquoise",
+                  "id": 1,
+                  "payment": "jcb",
+                  "price": 30,
+                  "product": "Sage Ground Wiberg",
+                },
+                Object {
+                  "car": "Suzuki",
+                  "city": "Mberubu",
+                  "color": "Crimson",
+                  "id": 2,
+                  "payment": "diners-club-international",
+                  "price": 69,
+                  "product": "Pizza Pizza Dough",
+                },
+                Object {
+                  "car": "Mercury",
+                  "city": "Kedungsumurkrajan",
+                  "color": "Blue",
+                  "id": 3,
+                  "payment": "diners-club-us-ca",
+                  "price": 50,
+                  "product": "Cheese - Gorgonzola",
+                },
+                Object {
+                  "car": "Volvo",
+                  "city": "Doña Remedios Trinidad",
+                  "color": "Orange",
+                  "id": 4,
+                  "payment": "jcb",
+                  "price": 65,
+                  "product": "Coconut - Whole",
+                },
+              ]
+            }
+            translations={Object {}}
+          >
+            <tbody>
+              <tr
+                key="0"
+              >
+                <_default
+                  domains={Array []}
+                  key="1"
+                  text={1}
+                  translations={Object {}}
+                >
+                  <td>
+                    1
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Sage Ground Wiberg"
+                  text="Sage Ground Wiberg"
+                  translations={Object {}}
+                >
+                  <td>
+                    Sage Ground Wiberg
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Turquoise"
+                  text="Turquoise"
+                  translations={Object {}}
+                >
+                  <td>
+                    Turquoise
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="30"
+                  text={30}
+                  translations={Object {}}
+                >
+                  <td>
+                    30
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="GMC"
+                  text="GMC"
+                  translations={Object {}}
+                >
+                  <td>
+                    GMC
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="jcb"
+                  text="jcb"
+                  translations={Object {}}
+                >
+                  <td>
+                    jcb
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Zhvanets"
+                  text="Zhvanets"
+                  translations={Object {}}
+                >
+                  <td>
+                    Zhvanets
+                  </td>
+                </_default>
+              </tr>
+              <tr
+                key="1"
+              >
+                <_default
+                  domains={Array []}
+                  key="2"
+                  text={2}
+                  translations={Object {}}
+                >
+                  <td>
+                    2
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Pizza Pizza Dough"
+                  text="Pizza Pizza Dough"
+                  translations={Object {}}
+                >
+                  <td>
+                    Pizza Pizza Dough
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Crimson"
+                  text="Crimson"
+                  translations={Object {}}
+                >
+                  <td>
+                    Crimson
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="69"
+                  text={69}
+                  translations={Object {}}
+                >
+                  <td>
+                    69
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Suzuki"
+                  text="Suzuki"
+                  translations={Object {}}
+                >
+                  <td>
+                    Suzuki
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="diners-club-international"
+                  text="diners-club-international"
+                  translations={Object {}}
+                >
+                  <td>
+                    diners-club-international
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Mberubu"
+                  text="Mberubu"
+                  translations={Object {}}
+                >
+                  <td>
+                    Mberubu
+                  </td>
+                </_default>
+              </tr>
+              <tr
+                key="2"
+              >
+                <_default
+                  domains={Array []}
+                  key="3"
+                  text={3}
+                  translations={Object {}}
+                >
+                  <td>
+                    3
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Cheese - Gorgonzola"
+                  text="Cheese - Gorgonzola"
+                  translations={Object {}}
+                >
+                  <td>
+                    Cheese - Gorgonzola
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Blue"
+                  text="Blue"
+                  translations={Object {}}
+                >
+                  <td>
+                    Blue
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="50"
+                  text={50}
+                  translations={Object {}}
+                >
+                  <td>
+                    50
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Mercury"
+                  text="Mercury"
+                  translations={Object {}}
+                >
+                  <td>
+                    Mercury
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="diners-club-us-ca"
+                  text="diners-club-us-ca"
+                  translations={Object {}}
+                >
+                  <td>
+                    diners-club-us-ca
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Kedungsumurkrajan"
+                  text="Kedungsumurkrajan"
+                  translations={Object {}}
+                >
+                  <td>
+                    Kedungsumurkrajan
+                  </td>
+                </_default>
+              </tr>
+              <tr
+                key="3"
+              >
+                <_default
+                  domains={Array []}
+                  key="4"
+                  text={4}
+                  translations={Object {}}
+                >
+                  <td>
+                    4
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Coconut - Whole"
+                  text="Coconut - Whole"
+                  translations={Object {}}
+                >
+                  <td>
+                    Coconut - Whole
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Orange"
+                  text="Orange"
+                  translations={Object {}}
+                >
+                  <td>
+                    Orange
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="65"
+                  text={65}
+                  translations={Object {}}
+                >
+                  <td>
+                    65
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Volvo"
+                  text="Volvo"
+                  translations={Object {}}
+                >
+                  <td>
+                    Volvo
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="jcb"
+                  text="jcb"
+                  translations={Object {}}
+                >
+                  <td>
+                    jcb
+                  </td>
+                </_default>
+                <_default
+                  domains={Array []}
+                  key="Doña Remedios Trinidad"
+                  text="Doña Remedios Trinidad"
+                  translations={Object {}}
+                >
+                  <td>
+                    Doña Remedios Trinidad
+                  </td>
+                </_default>
+              </tr>
+            </tbody>
+          </_default>
+        </table>
+      </div>
+      <div
+        className="filter-wrapper"
+      >
+        <RadioToggle
+          activateDictionary={[Function]}
+          activeDictionary=""
+          dictionaries={Object {}}
+        >
+          <div
+            className="radio-group-container"
+          >
+            <input
+              checked={true}
+              id="radio-0"
+              name="dictionary-selection"
+              onChange={[Function]}
+              type="radio"
+            />
+            <label
+              htmlFor="radio-0"
+              onClick={[Function]}
+            >
+              Initial data
+            </label>
+          </div>
+        </RadioToggle>
+      </div>
+    </div>
+  </Dataset>
+</DictionariesProvider>
+`;

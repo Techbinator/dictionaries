@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render snapshot with default values 1`] = `
+<tr>
+  <td
+    className="align-middle"
+    style={
+      Object {
+        "width": "10%",
+      }
+    }
+  >
+    dictionary2
+  </td>
+  <td
+    className="no-padding"
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Domain
+          </th>
+          <th>
+            Range
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <NewTranslation
+          addTranslation={[MockFunction]}
+          dictionaryUUID="619ce930-4116-11e9-9306-ef359c18301d"
+          translations={
+            Object {
+              "55a62ab0-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "Crimson",
+                "range": "newText",
+                "uuid": "55a62ab0-4116-11e9-9306-ef359c18301d",
+              },
+              "58f6b540-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "a",
+                "range": "b",
+                "uuid": "58f6b540-4116-11e9-9306-ef359c18301d",
+              },
+              "6e270e10-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "Turquoise",
+                "range": "newRange",
+                "uuid": "6e270e10-4116-11e9-9306-ef359c18301d",
+              },
+            }
+          }
+          translationsUUID={
+            Array [
+              "6e270e10-4116-11e9-9306-ef359c18301d",
+            ]
+          }
+        />
+        <Translation
+          dictionaryUUID="619ce930-4116-11e9-9306-ef359c18301d"
+          editTranslation={[MockFunction]}
+          key="6e270e10-4116-11e9-9306-ef359c18301d"
+          removeTranslation={[MockFunction]}
+          translationUUID="6e270e10-4116-11e9-9306-ef359c18301d"
+          translations={
+            Object {
+              "55a62ab0-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "Crimson",
+                "range": "newText",
+                "uuid": "55a62ab0-4116-11e9-9306-ef359c18301d",
+              },
+              "58f6b540-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "a",
+                "range": "b",
+                "uuid": "58f6b540-4116-11e9-9306-ef359c18301d",
+              },
+              "6e270e10-4116-11e9-9306-ef359c18301d": Object {
+                "domain": "Turquoise",
+                "range": "newRange",
+                "uuid": "6e270e10-4116-11e9-9306-ef359c18301d",
+              },
+            }
+          }
+          translationsUUID={
+            Array [
+              "6e270e10-4116-11e9-9306-ef359c18301d",
+            ]
+          }
+        />
+      </tbody>
+    </table>
+  </td>
+  <td
+    className="align-middle"
+    style={
+      Object {
+        "width": "10%",
+      }
+    }
+  >
+    <button
+      className="warning"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </td>
+</tr>
+`;

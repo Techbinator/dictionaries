@@ -1,0 +1,22 @@
+{
+  "domain": "Stonegrey",
+  "range": "Dark Grey",
+  "translationsUUID": ["1", "2", "3"],
+  "translations": {
+    "1": {
+      "uuid": "1",
+      "domain": "Stonegrey",
+      "range": "Dark Grey"
+    },
+    "2": {
+      "uuid": "2",
+      "domain": "Midnight Black",
+      "range": "Black"
+    },
+    "3": {
+      "uuid": "3",
+      "domain": "Mystic Silver",
+      "range": "Silver"
+    }
+  }
+}

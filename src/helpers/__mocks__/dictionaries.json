@@ -1,0 +1,35 @@
+{
+  "dictionaries": {
+    "619ce930-4116-11e9-9306-ef359c18301d": {
+      "uuid": "619ce930-4116-11e9-9306-ef359c18301d",
+      "name": "dictionary2",
+      "translationsUUID": ["6e270e10-4116-11e9-9306-ef359c18301d"]
+    },
+    "4aa2cce0-4116-11e9-9306-ef359c18301d": {
+      "uuid": "4aa2cce0-4116-11e9-9306-ef359c18301d",
+      "name": "test",
+      "translationsUUID": [
+        "58f6b540-4116-11e9-9306-ef359c18301d",
+        "55a62ab0-4116-11e9-9306-ef359c18301d"
+      ]
+    }
+  },
+  "translations": {
+    "6e270e10-4116-11e9-9306-ef359c18301d": {
+      "uuid": "6e270e10-4116-11e9-9306-ef359c18301d",
+      "domain": "Turquoise",
+      "range": "newRange"
+    },
+    "58f6b540-4116-11e9-9306-ef359c18301d": {
+      "uuid": "58f6b540-4116-11e9-9306-ef359c18301d",
+      "domain": "a",
+      "range": "b"
+    },
+    "55a62ab0-4116-11e9-9306-ef359c18301d": {
+      "uuid": "55a62ab0-4116-11e9-9306-ef359c18301d",
+      "domain": "Crimson",
+      "range": "newText"
+    }
+  },
+  "activeDictionary": "619ce930-4116-11e9-9306-ef359c18301d"
+}

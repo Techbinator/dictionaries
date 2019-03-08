@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dictionaries component should render snapshot with default values 1`] = `
+<DictionariesProvider
+  activateDictionary={[MockFunction]}
+  activeDictionary="619ce930-4116-11e9-9306-ef359c18301d"
+  addDictionary={[MockFunction]}
+  addTranslation={[MockFunction]}
+  dictionaries={
+    Object {
+      "4aa2cce0-4116-11e9-9306-ef359c18301d": Object {
+        "name": "test",
+        "translationsUUID": Array [
+          "58f6b540-4116-11e9-9306-ef359c18301d",
+          "55a62ab0-4116-11e9-9306-ef359c18301d",
+        ],
+        "uuid": "4aa2cce0-4116-11e9-9306-ef359c18301d",
+      },
+      "619ce930-4116-11e9-9306-ef359c18301d": Object {
+        "name": "dictionary2",
+        "translationsUUID": Array [
+          "6e270e10-4116-11e9-9306-ef359c18301d",
+        ],
+        "uuid": "619ce930-4116-11e9-9306-ef359c18301d",
+      },
+    }
+  }
+  editTranslation={[MockFunction]}
+  removeDictionary={[MockFunction]}
+  removeTranslation={[MockFunction]}
+  translations={
+    Object {
+      "55a62ab0-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "Crimson",
+        "range": "newText",
+        "uuid": "55a62ab0-4116-11e9-9306-ef359c18301d",
+      },
+      "58f6b540-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "a",
+        "range": "b",
+        "uuid": "58f6b540-4116-11e9-9306-ef359c18301d",
+      },
+      "6e270e10-4116-11e9-9306-ef359c18301d": Object {
+        "domain": "Turquoise",
+        "range": "newRange",
+        "uuid": "6e270e10-4116-11e9-9306-ef359c18301d",
+      },
+    }
+  }
+>
+  <Dictionaries>
+    <table
+      className="one-edge-shadow"
+    >
+      <thead>
+        <tr>
+          <th
+            colSpan={2}
+          >
+            Name
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <NewDictionary
+          addDictionary={[Function]}
+        >
+          <tr>
+            <td
+              className="p-relative"
+              colSpan={2}
+            >
+              <input
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Name"
+                type="string"
+                value=""
+              />
+            </td>
+            <td>
+              <input
+                onClick={[Function]}
+                type="button"
+                value="Add dictionary"
+              />
+            </td>
+          </tr>
+        </NewDictionary>
+      </tbody>
+    </table>
+  </Dictionaries>
+</DictionariesProvider>
+`;

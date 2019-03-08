@@ -1,0 +1,14 @@
+.dataset {
+  display: flex;
+  .table-wrapper,
+  .filter-wrapper {
+    border: 1px solid #ccc;
+  }
+  .table-wrapper {
+    flex: 8;
+  }
+  .filter-wrapper {
+    padding: 1%;
+    flex: 2;
+  }
+}

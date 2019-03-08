@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Translation component should render snapshot with default values 1`] = `
+<tr>
+  <td
+    className="p-relative"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  >
+    <input
+      name="domain"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Domain"
+      type="text"
+      value="a"
+    />
+  </td>
+  <td
+    className="p-relative"
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  >
+    <input
+      name="range"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Range"
+      type="text"
+      value="b"
+    />
+  </td>
+  <td
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  >
+    <button
+      className="info"
+      onClick={[Function]}
+    >
+      Edit
+    </button>
+    <button
+      className="warning"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </td>
+</tr>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render snapshot with default values 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "activateDictionary": [Function],
+      "activeDictionary": "",
+      "addDictionary": [Function],
+      "addTranslation": [Function],
+      "dictionaries": Object {},
+      "editTranslation": [Function],
+      "removeDictionary": [Function],
+      "removeTranslation": [Function],
+      "translations": Object {},
+    }
+  }
+/>
+`;

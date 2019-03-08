@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render snapshot with default text 1`] = `
+<td>
+  text
+</td>
+`;
+
+exports[`Header component should render snapshot with transformed text 1`] = `
+<td>
+  <span
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Turquoise
+  </span>
+  /
+  <span
+    style={
+      Object {
+        "color": "green",
+      }
+    }
+  >
+    newRange
+  </span>
+</td>
+`;
