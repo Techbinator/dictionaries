@@ -3,7 +3,6 @@
 exports[`NewTranslation component should render snapshot with default values 1`] = `
 <tr>
   <td
-    className="p-relative"
     style={
       Object {
         "width": "40%",
@@ -11,15 +10,14 @@ exports[`NewTranslation component should render snapshot with default values 1`]
     }
   >
     <input
+      name="domain"
       onChange={[Function]}
-      onFocus={[Function]}
       placeholder="Domain"
       type="text"
       value=""
     />
   </td>
   <td
-    className="p-relative"
     style={
       Object {
         "width": "40%",
@@ -27,8 +25,8 @@ exports[`NewTranslation component should render snapshot with default values 1`]
     }
   >
     <input
+      name="range"
       onChange={[Function]}
-      onFocus={[Function]}
       placeholder="Range"
       type="text"
       value=""

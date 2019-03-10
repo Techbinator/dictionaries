@@ -23,11 +23,11 @@ describe("NewTranslation component", () => {
   });
 
   it("should add translation", () => {
-    wrapper.find('input[placeholder="Domain"]').simulate("change", {
-      target: { value: "Domain" }
+    wrapper.find('input[name="domain"]').simulate("change", {
+      target: { value: "Domain", name: "domain" }
     });
-    wrapper.find('input[placeholder="Range"]').simulate("change", {
-      target: { value: "Range" }
+    wrapper.find('input[name="range"]').simulate("change", {
+      target: { value: "Range", name: "range" }
     });
     wrapper.find('input[type="button"]').simulate("click");
     expect(contextMock.addTranslation).toBeCalledWith(
@@ -41,24 +41,17 @@ describe("NewTranslation component", () => {
   });
 
   it("should throw validation error", () => {
-    const domainInput = wrapper.find('input[placeholder="Domain"]');
-    const rangeInput = wrapper.find('input[placeholder="Range"]');
-    domainInput.simulate("change", {
-      target: { value: "Domain" }
+    wrapper.find('input[name="domain"]').simulate("change", {
+      target: { value: "Domain", name: "domain" }
     });
-    rangeInput.simulate("change", {
-      target: { value: "Domain" }
+    wrapper.find('input[name="range"]').simulate("change", {
+      target: { value: "Domain", name: "range" }
     });
-    wrapper.find('input[type="button"]').simulate("click");
     expect(
       wrapper
         .find(".error")
         .first()
         .text()
     ).toEqual("Domain must not equal range");
-    domainInput.simulate("focus");
-    expect(wrapper.state().domainError).toEqual("");
-    rangeInput.simulate("focus");
-    expect(wrapper.state().rangeError).toEqual("");
   });
 });

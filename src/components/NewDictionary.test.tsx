@@ -36,5 +36,7 @@ describe("NewDictionary component", () => {
     expect(wrapper.find(".error").text()).toEqual(
       "Please add a dictionary name"
     );
+    wrapper.find('input[placeholder="Name"]').simulate("focus");
+    expect(wrapper.state().error).toEqual("");
   });
 });

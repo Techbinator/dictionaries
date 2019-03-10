@@ -15,8 +15,8 @@ export interface IDictionaryDataProps {
   editTranslation: TeditTranslation;
 }
 interface ITranslationState {
-  newDomain: string;
-  newRange: string;
+  domain: string;
+  range: string;
   domainError: string;
   rangeError: string;
   severity: string;
@@ -26,69 +26,63 @@ export default class Translation extends React.Component<
   ITranslationState
 > {
   state = {
-    newDomain: this.props.translations[this.props.translationUUID].domain,
-    newRange: this.props.translations[this.props.translationUUID].range,
+    domain: this.props.translations[this.props.translationUUID].domain,
+    range: this.props.translations[this.props.translationUUID].range,
     domainError: "",
     rangeError: "",
     severity: ""
   };
-  editTranslationsHandler = () => {
-    const {
-      editTranslation,
-      translations,
-      translationsUUID,
-      translationUUID
-    } = this.props;
-    const { newDomain, newRange } = this.state;
+
+  static getDerivedStateFromProps(
+    props: IDictionaryDataProps,
+    state: ITranslationState
+  ) {
+    const { translationsUUID, translations, translationUUID } = props;
+    const { domain, range } = state;
     const validation = validateTranslation(
-      newDomain,
-      newRange,
+      domain,
+      range,
       translationsUUID,
       translations,
       translationUUID
     );
+    return validation;
+  }
 
-    if (validation.severity !== "error") {
-      editTranslation({
-        uuid: translationUUID,
-        domain: newDomain,
-        range: newRange
-      });
-    }
-    this.setState({ ...validation });
+  editTranslationsHandler = () => {
+    const { editTranslation, translationUUID } = this.props;
+    const { domain, range } = this.state;
+
+    editTranslation({
+      uuid: translationUUID,
+      domain: domain,
+      range: range
+    });
   };
   public render() {
     const { removeTranslation, dictionaryUUID, translationUUID } = this.props;
-    const {
-      newDomain,
-      newRange,
-      domainError,
-      rangeError,
-      severity
-    } = this.state;
+    const { domain, range, domainError, rangeError, severity } = this.state;
     return (
       <tr>
-        <td style={{ width: "40%" }} className="p-relative">
-          {domainError && <span className={severity}>{domainError}</span>}
+        <td style={{ width: "40%" }}>
           <input
             type="text"
             name="domain"
             placeholder="Domain"
-            value={newDomain}
-            onFocus={e => this.setState({ domainError: "" })}
-            onChange={e => this.setState({ newDomain: e.target.value })}
+            value={domain}
+            onChange={e => this.setState({ domain: e.target.value })}
           />
+          {domainError && <span className={severity}>{domainError}</span>}
         </td>
-        <td style={{ width: "40%" }} className="p-relative">
-          {rangeError && <span className={severity}>{rangeError}</span>}
+        <td style={{ width: "40%" }}>
           <input
             type="text"
             name="range"
             placeholder="Range"
-            value={newRange}
-            onFocus={e => this.setState({ rangeError: "" })}
-            onChange={e => this.setState({ newRange: e.target.value })}
+            value={range}
+            onChange={e => this.setState({ range: e.target.value })}
           />
+          {rangeError && <span className={severity}>{rangeError}</span>}
         </td>
         <td style={{ width: "20%" }}>
           <button className="info" onClick={this.editTranslationsHandler}>

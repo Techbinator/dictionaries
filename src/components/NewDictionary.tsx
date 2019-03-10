@@ -20,7 +20,6 @@ export default class NewDictionary extends React.Component<INewDictionary> {
     return (
       <tr>
         <td colSpan={2} className="p-relative">
-          {error && <span className="error">{error}</span>}
           <input
             onChange={e => this.setState({ name: e.target.value })}
             onFocus={e => this.setState({ error: "" })}
@@ -28,6 +27,7 @@ export default class NewDictionary extends React.Component<INewDictionary> {
             placeholder="Name"
             value={name}
           />
+          {error && <span className="error">{error}</span>}
         </td>
         <td>
           <input type="button" value="Add dictionary" onClick={this.onSubmit} />

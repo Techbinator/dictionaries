@@ -18,56 +18,55 @@ const INITIAL_STATE = {
 export default class NewTranslation extends React.Component<INewTranslation> {
   state = INITIAL_STATE;
   onSubmit = (e: React.MouseEvent<HTMLElement>) => {
-    const {
-      addTranslation,
-      dictionaryUUID,
-      translationsUUID,
-      translations
-    } = this.props;
+    const { addTranslation, dictionaryUUID } = this.props;
 
     const { domain, range } = this.state;
 
-    const validation = validateTranslation(
+    addTranslation(dictionaryUUID, {
+      uuid: "",
       domain,
-      range,
+      range
+    });
+
+    this.setState({ ...INITIAL_STATE });
+  };
+  onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { translationsUUID, translations } = this.props;
+
+    const inputName = e.target.name as "range" | "domain";
+
+    const { domain, range } = this.state;
+    const validation = validateTranslation(
+      inputName == "domain" ? e.target.value : domain,
+      inputName == "range" ? e.target.value : range,
       translationsUUID,
       translations
     );
-
-    if (validation.severity !== "error") {
-      addTranslation(dictionaryUUID, {
-        uuid: "",
-        domain,
-        range
-      });
-
-      this.setState({ ...INITIAL_STATE, ...validation });
-    }
-    this.setState({ ...validation });
+    this.setState({ ...validation, [inputName]: e.target.value });
   };
   render() {
     const { domain, range, domainError, rangeError, severity } = this.state;
     return (
       <tr>
-        <td style={{ width: "40%" }} className="p-relative">
-          {domainError && <span className={severity}>{domainError}</span>}
+        <td style={{ width: "40%" }}>
           <input
             value={domain}
-            onChange={e => this.setState({ domain: e.target.value })}
-            onFocus={e => this.setState({ domainError: "" })}
+            name="domain"
+            onChange={this.onInputChange}
             type="text"
             placeholder="Domain"
           />
+          {domainError && <span className={severity}>{domainError}</span>}
         </td>
-        <td style={{ width: "40%" }} className="p-relative">
-          {rangeError && <span className={severity}>{rangeError}</span>}
+        <td style={{ width: "40%" }}>
           <input
             value={range}
-            onChange={e => this.setState({ range: e.target.value })}
-            onFocus={e => this.setState({ rangeError: "" })}
+            onChange={this.onInputChange}
+            name="range"
             type="text"
             placeholder="Range"
           />
+          {rangeError && <span className={severity}>{rangeError}</span>}
         </td>
         <td style={{ width: "20%" }}>
           <input

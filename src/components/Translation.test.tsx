@@ -50,10 +50,10 @@ describe("Translation component", () => {
     const domainInput = wrapper.find('input[name="domain"]');
     const rangeInput = wrapper.find('input[name="range"]');
     domainInput.simulate("change", {
-      target: { value: "Domain" }
+      target: { value: "Domain", name: "domain" }
     });
     wrapper.find('input[name="range"]').simulate("change", {
-      target: { value: "Domain" }
+      target: { value: "Domain", name: "range" }
     });
     wrapper.find(".info").simulate("click");
     expect(
@@ -62,9 +62,5 @@ describe("Translation component", () => {
         .first()
         .text()
     ).toEqual("Domain must not equal range");
-    domainInput.simulate("focus");
-    expect(wrapper.state().domainError).toEqual("");
-    rangeInput.simulate("focus");
-    expect(wrapper.state().rangeError).toEqual("");
   });
 });
