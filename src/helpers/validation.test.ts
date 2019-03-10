@@ -6,7 +6,7 @@ import {
   range
 } from "./__mocks__/validations.json";
 
-describe("translation validation", () => {
+describe("validateTranslation", () => {
   it("should pass in case of right data", () => {
     const expected = {
       domainError: "",
@@ -25,7 +25,7 @@ describe("translation validation", () => {
   it("should fail in case of duplicate domain", () => {
     const expected = {
       domainError: "Duplicate Domain",
-      rangeError: "",
+      rangeError: "Duplicate Range",
       severity: "notice"
     };
     expect(
@@ -44,14 +44,25 @@ describe("translation validation", () => {
     ).toEqual(expected);
   });
 
-  it("should fail in case of duplicate range", () => {
+  it("should fail in case of Forks or Duplicate Range with different Domains", () => {
     const expected = {
       domainError: "",
-      rangeError: "Duplicate Range",
+      rangeError: "Forks or Duplicate Range with different Domains",
       severity: "notice"
     };
     expect(
       validateTranslation("new domain", range, translationsUUID, translations)
+    ).toEqual(expected);
+  });
+
+  it("should fail in case of Forks or Duplicate Domain with different Ranges", () => {
+    const expected = {
+      domainError: "Forks or Duplicate Domain with different Ranges",
+      rangeError: "",
+      severity: "notice"
+    };
+    expect(
+      validateTranslation(domain, "new range", translationsUUID, translations)
     ).toEqual(expected);
   });
 

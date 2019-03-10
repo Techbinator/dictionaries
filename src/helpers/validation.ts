@@ -18,16 +18,6 @@ export function validateTranslation(
     rangeError: "",
     severity: ""
   };
-  let domains: string[] = [];
-  let ranges: string[] = [];
-  translationsUUID.forEach(tuuid => {
-    //in case of edit ignore the current uuid
-    const isEdit = uuid && uuid == tuuid;
-    if (!isEdit) {
-      domains.push(translations[tuuid].domain);
-      ranges.push(translations[tuuid].range);
-    }
-  });
 
   if (domain == range) {
     validationData.domainError = "Domain must not equal range";
@@ -36,50 +26,55 @@ export function validateTranslation(
     return validationData;
   }
 
-  if (
-    domains.includes(domain) &&
-    ranges.includes(domain) &&
-    domains.includes(range) &&
-    ranges.includes(range)
-  ) {
-    const errorCycle =
-      "Two or more rows in a dictionary result in cycles, resulting in a never-ending transformation.";
+  translationsUUID.forEach(tuuid => {
+    //in case of edit ignore the current uuid
+    const isEdit = uuid && uuid == tuuid;
+    if (!isEdit) {
+      const translation = translations[tuuid];
+      if (translation.domain == range && translation.range == domain) {
+        const errorCycle =
+          "Two or more rows in a dictionary result in cycles, resulting in a never-ending transformation.";
 
-    validationData.domainError = errorCycle;
-    validationData.rangeError = errorCycle;
-    validationData.severity = "error";
-    return validationData;
-  }
+        validationData.domainError = errorCycle;
+        validationData.rangeError = errorCycle;
+        validationData.severity = "error";
+        return validationData;
+      }
 
-  if (domains.includes(range)) {
-    const errorCycle =
-      "There is a chain structure in the dictionary domain(A value in Range column also appears in Domain column )";
+      if (translation.domain == range) {
+        validationData.rangeError =
+          "There is a chain structure in the dictionary domain(A value in Range column also appears in Domain column )";
+        validationData.severity = "error";
+        return validationData;
+      }
 
-    validationData.domainError = "";
-    validationData.rangeError = errorCycle;
-    validationData.severity = "error";
-    return validationData;
-  }
+      if (translation.range == domain) {
+        validationData.domainError =
+          "There is a chain structure in the dictionary range(A value in Domain column also appears in Range column )";
+        validationData.rangeError = "";
+        validationData.severity = "error";
+        return validationData;
+      }
 
-  if (ranges.includes(domain)) {
-    const errorCycle =
-      "There is a chain structure in the dictionary range(A value in Domain column also appears in Range column )";
+      if (domain == translation.domain && range == translation.range) {
+        validationData.severity = "notice";
+        validationData.domainError = "Duplicate Domain";
+        validationData.rangeError = "Duplicate Range";
+        return validationData;
+      }
 
-    validationData.domainError = errorCycle;
-    validationData.rangeError = "";
-    validationData.severity = "error";
-    return validationData;
-  }
+      if (domain == translation.domain) {
+        validationData.severity = "notice";
+        validationData.domainError =
+          "Forks or Duplicate Domain with different Ranges";
+      }
 
-  if (domains.includes(domain)) {
-    validationData.domainError = "Duplicate Domain";
-    validationData.severity = "notice";
-    return validationData;
-  }
-  if (ranges.includes(range)) {
-    validationData.rangeError = "Duplicate Range";
-    validationData.severity = "notice";
-    return validationData;
-  }
+      if (range == translation.range) {
+        validationData.severity = "notice";
+        validationData.rangeError =
+          "Forks or Duplicate Range with different Domains";
+      }
+    }
+  });
   return validationData;
 }
