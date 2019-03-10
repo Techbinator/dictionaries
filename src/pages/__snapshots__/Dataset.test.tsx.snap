@@ -464,7 +464,7 @@ exports[`Dataset component should render snapshot with default values 1`] = `
               checked={true}
               id="radio-0"
               name="dictionary-selection"
-              onChange={[Function]}
+              readOnly={true}
               type="radio"
             />
             <label

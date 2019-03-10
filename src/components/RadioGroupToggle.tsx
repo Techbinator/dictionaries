@@ -19,7 +19,7 @@ export default class RadioToggle extends React.Component<IRadioToggleProps> {
           name="dictionary-selection"
           id="radio-0"
           checked={activeDictionary == ""}
-          onChange={() => null}
+          readOnly
         />
         <label onClick={() => activateDictionary("")} htmlFor="radio-0">
           Initial data
@@ -31,7 +31,7 @@ export default class RadioToggle extends React.Component<IRadioToggleProps> {
               type="radio"
               id={`radio-${dictionaries[key].uuid}`}
               checked={dictionaries[key].uuid === activeDictionary}
-              onChange={() => null}
+              readOnly
             />
             <label
               htmlFor={dictionaries[key].uuid}

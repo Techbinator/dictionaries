@@ -8,7 +8,7 @@ exports[`RadioGroupToggle component should render snapshot with default values 1
     checked={false}
     id="radio-0"
     name="dictionary-selection"
-    onChange={[Function]}
+    readOnly={true}
     type="radio"
   />
   <label
@@ -24,7 +24,7 @@ exports[`RadioGroupToggle component should render snapshot with default values 1
       checked={true}
       id="radio-619ce930-4116-11e9-9306-ef359c18301d"
       name="dictionary-selection"
-      onChange={[Function]}
+      readOnly={true}
       type="radio"
     />
     <label
@@ -41,7 +41,7 @@ exports[`RadioGroupToggle component should render snapshot with default values 1
       checked={false}
       id="radio-4aa2cce0-4116-11e9-9306-ef359c18301d"
       name="dictionary-selection"
-      onChange={[Function]}
+      readOnly={true}
       type="radio"
     />
     <label

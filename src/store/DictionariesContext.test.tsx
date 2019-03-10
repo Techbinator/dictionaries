@@ -8,6 +8,14 @@ jest.mock("uuid", () => ({
   v1: jest.fn(() => "11111-22222-33333-44444")
 }));
 
+let localStorageMock = (function() {
+  return {
+    setItem: jest.fn(),
+    getItem: jest.fn()
+  };
+})();
+Object.defineProperty(window, "localStorage", { value: localStorageMock });
+
 describe("Header component", () => {
   const wrapper: any = shallow(<DictionariesProvider />);
   let state: IDictionaryProvider;
@@ -35,17 +43,25 @@ describe("Header component", () => {
     };
     expect(wrapper.instance().state.dictionaries).toEqual(expected);
   });
-  // it("should set item to localstorage", () => {
-
-  //   const localstorageMock = jest.spyOn(
-  //     window.localStorage.__proto__,
-  //     "setItem"
-  //   );
-  //   expect(localstorageMock).toHaveBeenCalledWith(
-  //     "translations",
-  //     '{"11111-22222-33333-44444":{"uuid":"11111-22222-33333-44444","domain":"domainDummyEdited","range":"rangeDummyEdited"}}'
-  //   );
-  // });
+  it("should get item from localstorage", () => {
+    wrapper.update();
+    expect(window.localStorage.getItem).toHaveBeenCalledWith("translations");
+    expect(window.localStorage.getItem).toHaveBeenCalledWith("dictionaries");
+    expect(wrapper.state().dictionaries).toEqual({
+      "11111-22222-33333-44444": {
+        name: "test",
+        translationsUUID: [],
+        uuid: "11111-22222-33333-44444"
+      }
+    });
+  });
+  it("should set item to localstorage", () => {
+    wrapper.update();
+    expect(window.localStorage.setItem).toHaveBeenCalledWith(
+      "dictionaries",
+      `{\"11111-22222-33333-44444\":{\"uuid\":\"11111-22222-33333-44444\",\"name\":\"test\",\"translationsUUID\":[]}}`
+    );
+  });
   it("should activate dictionary", () => {
     state.activateDictionary(dummyUUID);
     expect(wrapper.instance().state.activeDictionary).toEqual(dummyUUID);
